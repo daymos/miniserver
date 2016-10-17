@@ -9,9 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "boom": "^4.2.0",
     "cloudant": "^1.5.1",
     "hapi": "^15.1.1",
-    "hapi-mongodb": "^6.2.0",
-    "hapi-users-plugin": "^1.0.6"
+    "hapi-users-plugin": "^1.0.6",
+    "mongodb": "^2.2.10"
   }
 }
