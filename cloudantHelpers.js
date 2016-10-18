@@ -16,7 +16,7 @@ exports.initCloudant = (username, callback)=>{
 
       //here shoud create data structure
 
-      cloudantClient.db.use(JSON.parse(localStorage.getItem('faceit')).username).insert({ crazy: true }, 'rabbit', function(err, body, header) {
+      cloudantClient.db.use(username).insert({ crazy: true }, 'rabbit', function(err, body, header) {
         if (err) {
           return console.log('error insertin gmessage', err.message);
         }
