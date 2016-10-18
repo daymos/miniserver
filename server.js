@@ -4,7 +4,7 @@ const Assert = require('assert'),
   Hapi = require('hapi'),
   Boom = require("boom"),
   MongoClient = require("mongodb").MongoClient,
-  { initCloudant } = require('./cloudantHelpers.js')
+  initCloudant  = require('./cloudantHelpers.js').initCloudant
 
 const server = new Hapi.Server();
 server.connection({ port: 3000, routes: { cors: true } });
