@@ -3,6 +3,7 @@ exports.initCloudant = (username, callback)=>{
   const cloudantClient = require('cloudant')({account:'daymos', password:'Mattia1988'});
 
   cloudantClient.db.create(username, function() {
+
     cloudantClient.generate_api_key(function(err, api) {
       if (err) throw err     
       cloudantClient.db.use(username).set_security({
@@ -16,14 +17,14 @@ exports.initCloudant = (username, callback)=>{
 
       //here shoud create data structure
 
-      cloudantClient.db.use(username).insert({ crazy: true }, 'rabbit', function(err, body, header) {
+      cloudantClient.db.use(username).insert({ currentLevel: 0 }, 'currentLevel', function(err, body, header) {
         if (err) {
-          return console.log('error insertin gmessage', err.message);
+          return console.log('error adding initial level', err.message);
         }
-        console.log('You have inserted the rabbit.');
+        console.log('You have initialised the level');
       });
 
       callback(api)
     })
   })
-}
+} 
