@@ -13,9 +13,9 @@ server.route({
   method:'GET',
   path:'/',
   handler:function(request,reply){
-    newApiKey() 
-    console.log('request received')
-    reply('ciao')
+ //   newApiKey() 
+  //  console.log('request received')
+    reply('im listening')
   }
 })
 server.route({
