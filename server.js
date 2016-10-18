@@ -13,11 +13,10 @@ server.route({
   method:'GET',
   path:'/',
   handler:function(request,reply){
- //   newApiKey() 
-  //  console.log('request received')
     reply('im listening')
   }
 })
+
 server.route({
   method:'POST',
   path:'/login',
@@ -37,6 +36,7 @@ server.route({
     });
   }
 })
+
 server.route({
   method:'POST',
   path:'/signup',

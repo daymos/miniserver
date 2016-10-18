@@ -17,7 +17,7 @@ exports.initCloudant = (username, callback)=>{
 
       //here shoud create data structure
 
-      cloudantClient.db.use(username).insert({ currentLevel: 0 }, 'currentLevel', function(err, body, header) {
+      cloudantClient.db.use(username).insert({ currentLevel: 0.0 }, 'currentLevel', function(err, body, header) {
         if (err) {
           return console.log('error adding initial level', err.message);
         }
