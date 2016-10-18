@@ -1,7 +1,6 @@
 exports.initCloudant = (username, callback)=>{
 
   const cloudantClient = require('cloudant')({account:'daymos', password:'Mattia1988'});
-  console.log('initCloudant was called')
 
   cloudantClient.db.create(username, function() {
     cloudantClient.generate_api_key(function(err, api) {
@@ -15,9 +14,15 @@ exports.initCloudant = (username, callback)=>{
         console.log('set security for: ', username) 
       })
 
-      console.log('API key: %s', api.key);
-      console.log('Password for this key: %s', api.password);
-      console.log('');
+      //here shoud create data structure
+
+      cloudantClient.db.use(JSON.parse(localStorage.getItem('faceit')).username).insert({ crazy: true }, 'rabbit', function(err, body, header) {
+        if (err) {
+          return console.log('error insertin gmessage', err.message);
+        }
+        console.log('You have inserted the rabbit.');
+      });
+
       callback(api)
     })
   })
