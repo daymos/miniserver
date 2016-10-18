@@ -30,7 +30,7 @@ server.route({
         Assert.equal(err, null)
         console.log('docs: ', docs)
         if(docs.length === 0) reply('usernotfound')
-        else if(docs[0].password === request.payload.password) reply ({state:'success', data: JSON.stringify(docs[0]})) //sendback api key
+        else if(docs[0].password === request.payload.password) reply ({state:'success', data: JSON.stringify(docs[0])}) //sendback api key
         else reply('wrongpassword' )
       });
       db.close();
