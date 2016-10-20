@@ -24,7 +24,7 @@ exports.initCloudant = (username, callback)=>{
         console.log('You have initialised the level');
       });
 
-      cloudantClient.db.use(username).insert({ historical: JSON.stringify([]) }, 'historical', function(err, body, header) {
+      cloudantClient.db.use(username).insert({ historical: [] }, 'historical', function(err, body, header) {
         if (err) {
           return console.log('error adding initial historical', err.message);
         }
